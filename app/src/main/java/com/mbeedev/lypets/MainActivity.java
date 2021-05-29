@@ -3,6 +3,7 @@ package com.mbeedev.lypets;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -14,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         WebView web = (WebView) findViewById(R.id.web_view);
+        WebSettings webSettings = web.getSettings();
+        webSettings.setJavaScriptEnabled(true);
         web.loadUrl("https://lypets.id/");
         web.setWebViewClient(new WebViewClient());
 
